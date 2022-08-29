@@ -9,8 +9,8 @@ import com.skillstorm.savingsapi.models.Goal;
 import com.skillstorm.savingsapi.models.User;
 import com.skillstorm.savingsapi.repositories.GoalRepository;
 
-@Service
 @Transactional
+@Service
 public class GoalServiceImpl implements GoalService{
 
 	@Autowired
