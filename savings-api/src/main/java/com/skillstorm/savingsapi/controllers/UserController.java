@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -41,6 +42,13 @@ public class UserController {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public User create(@Valid @RequestBody User user) {
 		return service.save(user);
+	}
+	
+	@PutMapping("/{id}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public User update(@Valid @RequestBody User user, @PathVariable int id) {
+		user.setUser_id(id);
+		return service.update(user);
 	}
 
 }
