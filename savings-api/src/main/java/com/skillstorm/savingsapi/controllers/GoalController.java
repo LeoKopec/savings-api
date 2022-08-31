@@ -17,13 +17,13 @@ public class GoalController {
 	@Autowired
 	private GoalService service;
 	
-	@GetMapping("/{username}")
+	@GetMapping("/username/{username}")
 	@ResponseStatus(code = HttpStatus.OK)
 	public List<Goal> findByUsername(@PathVariable String username) {
 		return service.findByUsername(username);
 	}
 	
-	@GetMapping("/{username}/{id}")
+	@GetMapping("/id/{id}")
 	@ResponseStatus(code = HttpStatus.OK)
 	public Optional<Goal> findById(@PathVariable int id) {
 		return service.findById(id);
@@ -42,7 +42,7 @@ public class GoalController {
 		return service.update(goal);
 	}
 	
-	@DeleteMapping("/{username}/{id}")
+	@DeleteMapping("/{id}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable int id) {
 		service.deleteById(id);

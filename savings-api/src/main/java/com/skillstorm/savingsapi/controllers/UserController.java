@@ -1,5 +1,7 @@
 package com.skillstorm.savingsapi.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,10 +21,16 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	
-	@GetMapping("/{username}")
+	@GetMapping("/username/{username}")
 	@ResponseStatus(code = HttpStatus.OK)
 	public User findByUsername(@PathVariable String username) {
 		return service.findByUsername(username);
+	}
+	
+	@GetMapping("/id/{id}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public Optional<User> findById(@PathVariable int id) {
+		return service.findById(id);
 	}
 
 }
