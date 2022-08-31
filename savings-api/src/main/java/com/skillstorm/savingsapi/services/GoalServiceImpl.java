@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.skillstorm.savingsapi.models.Goal;
-import com.skillstorm.savingsapi.models.User;
 import com.skillstorm.savingsapi.repositories.GoalRepository;
 
 @Transactional
@@ -32,8 +31,7 @@ public class GoalServiceImpl implements GoalService{
 	}
 
 	@Override
-	public List<Goal> findByUsername(User user) {
-		String username = user.getUsername();
+	public List<Goal> findByUsername(String username) {
 		List<Goal> goals = repository.findByUsername(username);
 		return goals;
 	}
