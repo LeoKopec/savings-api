@@ -24,14 +24,14 @@ public class Goal {
 	@Column(name = "date")
 	private LocalDate date;
 	
-	@Column(name = "currentAmount")
+	@Column(name = "current_amount")
 	private double currentAmount;
 	
-	@Column(name = "totalAmount")
+	@Column(name = "total_amount")
 	private double totalAmount;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "userID")
+	@JoinColumn(name = "user_id")
 	@JsonBackReference
 	private User user;
 

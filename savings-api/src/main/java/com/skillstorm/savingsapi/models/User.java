@@ -10,7 +10,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int userID;
+	private int user_id;
 	
 	@Column(name = "username")
 	private String username;
@@ -18,10 +18,10 @@ public class User {
 	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "firstName")
+	@Column(name = "first_name")
 	private String firstName;
 	
-	@Column(name = "lastName")
+	@Column(name = "last_name")
 	private String lastName;
 	
 	@OneToMany(mappedBy = "user")
@@ -43,9 +43,9 @@ public class User {
 	}
 
 	// full-argument constructor
-	public User(int userID, String username, String password, String firstName, String lastName) {
+	public User(int user_id, String username, String password, String firstName, String lastName) {
 		super();
-		this.userID = userID;
+		this.user_id = user_id;
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
@@ -53,14 +53,14 @@ public class User {
 	}
 
 	// getters and setters
-	public int getUserID() {
-		return userID;
+	public int getUser_id() {
+		return user_id;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
-
+	
 	public String getUsername() {
 		return username;
 	}
@@ -104,7 +104,7 @@ public class User {
 	// to-string function
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", username=" + username + ", password=" + password + ", firstName="
+		return "User [userID=" + user_id + ", username=" + username + ", password=" + password + ", firstName="
 				+ firstName + ", lastName=" + lastName + ", goals=" + goals + "]";
 	}
 }
