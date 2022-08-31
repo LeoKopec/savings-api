@@ -41,4 +41,10 @@ public class GoalController {
 		goal.setId(id);
 		return service.update(goal);
 	}
+	
+	@DeleteMapping("/{username}/{id}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable int id) {
+		service.deleteById(id);
+	}
 }
