@@ -2,6 +2,8 @@ package com.skillstorm.savingsapi.models;
 
 import java.time.LocalDate;
 import javax.persistence.*;
+import javax.validation.constraints.*;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
@@ -12,21 +14,26 @@ public class Goal {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@NotNull
 	@Column(name = "name")
 	private String name;
 	
+	@NotNull
 	@Column(name = "description")
 	private String description;
 	
 	@Column(name = "image")
 	private String image;
 	
+	@Future
 	@Column(name = "date")
 	private LocalDate date;
 	
+	@DecimalMin(value = "0.00", inclusive = true)
 	@Column(name = "current_amount")
 	private double currentAmount;
 	
+	@NotNull
 	@Column(name = "total_amount")
 	private double totalAmount;
 	
