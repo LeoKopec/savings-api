@@ -35,4 +35,10 @@ public class GoalController {
 		return service.save(goal);
 	}
 	
+	@PutMapping("/{id}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public Goal update(@Valid @RequestBody Goal goal, @PathVariable int id) {
+		goal.setId(id);
+		return service.update(goal);
+	}
 }
