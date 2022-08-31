@@ -30,7 +30,7 @@ public class Goal {
 	@Column(name = "total_amount")
 	private double totalAmount;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne()
 	@JoinColumn(name = "user_id")
 	@JsonBackReference
 	private User user;
