@@ -2,7 +2,7 @@ package com.skillstorm.savingsapi.models;
 
 import java.util.*;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -13,19 +13,19 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int user_id;
 	
-	@NotNull
+	@NotBlank
 	@Column(name = "username")
 	private String username;
 	
-	@NotNull
+	@NotBlank
 	@Column(name = "password")
 	private String password;
 	
-	@NotNull
+	@NotBlank
 	@Column(name = "first_name")
 	private String firstName;
 	
-	@NotNull
+	@NotBlank
 	@Column(name = "last_name")
 	private String lastName;
 	
